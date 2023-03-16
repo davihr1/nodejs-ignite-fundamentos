@@ -13,6 +13,7 @@ class OneToHundredStream extends Readable {
     _read() {
         const i = this.index++
 
+       setTimeout(() => {
         if( i > 100) {
             this.push(null);
         } else {
@@ -22,6 +23,7 @@ class OneToHundredStream extends Readable {
 
             this.push(buf)
         }
+       }, 1000)
     }
 }
 
